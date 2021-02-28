@@ -44,6 +44,5 @@ void welcomeScreen()
     cout<<"\n\n\t  SYSTEM" << endl;
     
     cout << "\n";
-    
 }    
  
