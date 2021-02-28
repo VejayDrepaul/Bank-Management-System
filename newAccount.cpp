@@ -25,8 +25,7 @@ void new_account()
     string account_holder;
     char account_type;
     
-    fstream fout;
-    fout.open("csv/account_info.csv");
+    std::ofstream myFile("csv/account_info.csv");
     
     cout << "\n";
 
@@ -44,25 +43,34 @@ void new_account()
     cout << "Enter the amount you want to deposit right now: ";
     cin >> init_amount;
     
-    fout << "Holder Name" << ","
-         << " Account Owner" << ","
-         << " Account Type" << ","
-         << " Amount Deposited"
-         << "\n"
-         << account_holder << ", "
-         << account_number << ", "
-         << account_type << ", $"
-         << init_amount
-         << "\n";
+    myFile << "Holder Name" << ","
+           << " Account Owner" << ","
+           << " Account Type" << ","
+           << " Amount Deposited"
+           << "\n";
+           
+    myFile << account_holder << ", "
+           << account_number << ", "
+           << account_type << ", $"
+           << init_amount
+           << "\n";
+         
+    myFile.close();
 }
 
 int numberCreation()
 {
-    int random_number = 100;
+    int random_number;
     srand((unsigned) time(0));
     for (int index = 0; index < 10; index++) {
         random_number = (rand() % 999999999999) + 1;
     }
     
     return random_number;
+}
+
+
+void deposit()
+{
+    int deposit_amount;
 }
