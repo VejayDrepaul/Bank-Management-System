@@ -1,6 +1,7 @@
 #include <iostream>
 #include <iomanip>
 #include <string>   
+#include <fstream>
 #include "includes/newAccount.h"
 
 using std::cout;
@@ -8,13 +9,14 @@ using std::endl;
 using std::cin;
 
 void welcomeScreen();
+void trycsv();
 
 int main() 
 {
     char choice;
     
     welcomeScreen();
-    
+    //trycsv  ();
     cout<<"\n\n\n\tMAIN MENU";
     cout<<"\n\n\t01. NEW ACCOUNT";
     cout<<"\n\n\t02. DEPOSIT AMOUNT";
@@ -42,4 +44,24 @@ void welcomeScreen()
     
     cout << "\n";
 }    
- 
+/*
+void trycsv()
+{
+    std::string name;
+    int amount, banknumber;
+    
+    cin >> name;
+    cin >> amount;
+    cin >> banknumber;
+    
+    std::ofstream tryfile("csv/account_info.csv");
+    tryfile << "\n"
+            << "\n"
+            << "\n"h
+            << name << ", "
+            << amount << ", "
+            << banknumber
+            << "\n";
+}
+*/
+
