@@ -12,21 +12,20 @@ using std::ofstream;
 
 class accountCreation
 {    
+    
 public:
     void new_accout();
+    void test();
 };
 
 int numberCreation();
 
 void new_account()
-{
+{  
     int account_number, init_amount;
     account_number = numberCreation();
     string account_holder;
     char account_type;
-    
-    std::ofstream myFile("csv/account_info.csv");
-    
     cout << "\n";
 
     cout << "Enter the name of the account holder: ";
@@ -48,14 +47,18 @@ void new_account()
            << " Account Type" << ","
            << " Amount Deposited"
            << "\n";
-           
+    test();
+}
+
+void accountCreation::test()
+{
+    std::ofstream myFile("csv/account_info.csv");
+
     myFile << account_holder << ", "
            << account_number << ", "
            << account_type << ", $"
            << init_amount
            << "\n";
-         
-    myFile.close();
 }
 
 int numberCreation()
