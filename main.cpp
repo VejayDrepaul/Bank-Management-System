@@ -12,6 +12,7 @@ void welcomeScreen();
 int main() 
 {
     char choice;
+    
     welcomeScreen();
     
     cout<<"\n\n\n\tMAIN MENU";
@@ -27,11 +28,7 @@ int main()
     cout << "\n\n";
     cin >> choice;
     
-    switch(choice) {
-        case '1':
-            new_account();
-            break;
-    }
+    new_account();
     
     
     return 0;
