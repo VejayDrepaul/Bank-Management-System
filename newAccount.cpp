@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <ios>
 #include <cstdlib>
 
 using std::cout;
@@ -14,14 +15,13 @@ class accountCreation
 {    
     
 public:
-    void new_accout();
-    void test();
+    void new_account();
 };
 
 int numberCreation();
 
 void new_account()
-{  
+{
     int account_number, init_amount;
     account_number = numberCreation();
     string account_holder;
@@ -31,30 +31,21 @@ void new_account()
     cout << "Enter the name of the account holder: ";
     cin >> account_holder;
     cout << "\n";
-    
+
     cout << "Your account number is: " << account_number;
     cout << "\n\n";
-        
+
     cout << "What type of account do you want to open [(C)hecking/(S)avings]: ";
     cin >> account_type;
     cout << "\n";
 
     cout << "Enter the amount you want to deposit right now: ";
     cin >> init_amount;
-    
-    myFile << "Holder Name" << ","
-           << " Account Owner" << ","
-           << " Account Type" << ","
-           << " Amount Deposited"
-           << "\n";
-    test();
-}
 
-void accountCreation::test()
-{
-    std::ofstream myFile("csv/account_info.csv");
-
-    myFile << account_holder << ", "
+    std::ofstream myFile;
+    myFile.open("csv/account_info.csv", ios::app);
+    myFile << "\n"
+           << account_holder << ", "
            << account_number << ", "
            << account_type << ", $"
            << init_amount
