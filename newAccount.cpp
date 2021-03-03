@@ -1,15 +1,14 @@
 #include <iostream>
 #include <string>
 #include <fstream>
-#include <ios>
 #include <cstdlib>
 
 using std::cout;
 using std::endl;
 using std::cin;
 using std::string;
-using std::fstream;
 using std::ofstream;
+using std::ios;
 
 class accountCreation
 {    
@@ -48,8 +47,7 @@ void new_account()
            << account_holder << ", "
            << account_number << ", "
            << account_type << ", $"
-           << init_amount
-           << "\n";
+           << init_amount;
 }
 
 int numberCreation()
