@@ -44,24 +44,3 @@ void welcomeScreen()
     
     cout << "\n";
 }    
-/*
-void trycsv()
-{
-    std::string name;
-    int amount, banknumber;
-    
-    cin >> name;
-    cin >> amount;
-    cin >> banknumber;
-    
-    std::ofstream tryfile("csv/account_info.csv");
-    tryfile << "\n"
-            << "\n"
-            << "\n"h
-            << name << ", "
-            << amount << ", "
-            << banknumber
-            << "\n";
-}
-*/
-
