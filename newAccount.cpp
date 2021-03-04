@@ -48,12 +48,15 @@ void new_account()
            << " Account Type" << ","
            << " Amount Deposited"
            << "\n";
-           
-    myFile << account_holder << ", "
-           << account_number << ", "
-           << account_type << ", $"
-           << init_amount
-           << "\n";
+         
+    for (int i = 0; i < 5; i++) {
+
+        myFile << account_holder << ", "
+            << account_number << ", "
+            << account_type << ", $"
+            << init_amount
+            << "\n";
+    }
          
     myFile.close();
 }
