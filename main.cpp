@@ -1,6 +1,7 @@
 #include <iostream>
 #include <iomanip>
 #include <string>   
+#include <fstream>
 #include "includes/newAccount.h"
 
 using std::cout;
@@ -8,12 +9,14 @@ using std::endl;
 using std::cin;
 
 void welcomeScreen();
+void trycsv();
 
 int main() 
 {
     char choice;
-    welcomeScreen();
     
+    welcomeScreen();
+    //trycsv  ();
     cout<<"\n\n\n\tMAIN MENU";
     cout<<"\n\n\t01. NEW ACCOUNT";
     cout<<"\n\n\t02. DEPOSIT AMOUNT";
@@ -27,11 +30,7 @@ int main()
     cout << "\n\n";
     cin >> choice;
     
-    switch(choice) {
-        case '1':
-            new_account();
-            break;
-    }
+    new_account();
     
     
     return 0;
@@ -45,4 +44,3 @@ void welcomeScreen()
     
     cout << "\n";
 }    
- 
