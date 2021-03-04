@@ -13,10 +13,8 @@ void trycsv();
 
 int main() 
 {
-    char choice;
-    
     welcomeScreen();
-    //trycsv  ();
+   
     cout<<"\n\n\n\tMAIN MENU";
     cout<<"\n\n\t01. NEW ACCOUNT";
     cout<<"\n\n\t02. DEPOSIT AMOUNT";
@@ -28,10 +26,16 @@ int main()
     cout<<"\n\n\t08. EXIT";
     cout<<"\n\n\tSelect Your Option (1-8) ";
     cout << "\n\n";
-    cin >> choice;
     
-    new_account();
+    int options;
     
+    cout << "What do you want to do: ";
+    cin >> options;
+    
+    switch(options) {
+        case 1:
+            new_account();
+    }
     
     return 0;
 }
