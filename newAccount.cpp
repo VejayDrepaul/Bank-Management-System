@@ -1,9 +1,7 @@
 #include <iostream>
 #include <string>
 #include <fstream>
-#include <cstdlib>
-#include <cstring>
-#include <cstdio>
+
 
 using std::cout;
 using std::endl;
@@ -38,7 +36,6 @@ void new_account()
 
     cout << "What type of account do you want to open [(C)hecking/(S)avings]: ";
     cin >> account_type;
-    putchar(toupper(account_type));
     cout << "\n";
 
     cout << "Enter the amount you want to deposit right now: ";
@@ -50,32 +47,23 @@ void new_account()
     if (account_type == "S")
         account_type = "Savings";
     
-<<<<<<< HEAD
-    myFile << "Holder Name" << ","
-           << " Account Owner" << ","
-           << " Account Type" << ","
-           << " Amount Deposited"
-           << "\n";
-         
-    for (int i = 0; i < 5; i++) {
-
-        myFile << account_holder << ", "
-            << account_number << ", "
-            << account_type << ", $"
-            << init_amount
-            << "\n";
-    }
-         
-    myFile.close();
-=======
-    ofstream myFile;
-    myFile.open("csv/account_info.csv", ios::app);
-    myFile << "\n"
-           << account_holder << ", "
-           << account_number << ", "
-           << account_type << ", $"
-           << init_amount;
->>>>>>> a36825be1f6cf3b111f049402138a48fe9dc5e7a
+    system("cd csv && touch account_info.csv");
+    ofstream accountLog;
+    accountLog.open("csv/account_info.csv");
+    
+    accountLog << "Account Holder" << ", "
+               << "Account Number" << ", "
+               << "Account Type" << ", "
+               << "Amount($)";
+    accountLog.close();
+    
+    accountLog.open("csv/account_info.csv", ios::app);
+    accountLog << "\n"
+               << account_holder << ", "
+               << account_number << ", "
+               << account_type << ", $"
+               << init_amount;
+    accountLog.close();
 }
 
 int numberCreation()
@@ -87,10 +75,4 @@ int numberCreation()
     }
     
     return random_number;
-}
-
-
-void deposit()
-{
-    int deposit_amount;
 }
