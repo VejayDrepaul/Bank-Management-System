@@ -2,7 +2,6 @@
 #include <string>
 #include <fstream>
 
-
 using std::cout;
 using std::endl;
 using std::cin;
@@ -18,6 +17,7 @@ public:
 };
 
 int numberCreation();
+void logCreation();
 
 void new_account()
 {
@@ -47,15 +47,16 @@ void new_account()
     if (account_type == "S")
         account_type = "Savings";
     
-    system("cd csv && touch account_info.csv");
     ofstream accountLog;
     accountLog.open("csv/account_info.csv");
-    
-    accountLog << "Account Holder" << ", "
-               << "Account Number" << ", "
-               << "Account Type" << ", "
-               << "Amount($)";
     accountLog.close();
+    
+    if (accountLog) {
+        cout << "exist";
+    }
+    else {
+        logCreation();
+    }
     
     accountLog.open("csv/account_info.csv", ios::app);
     accountLog << "\n"
@@ -75,4 +76,17 @@ int numberCreation()
     }
     
     return random_number;
+}
+
+void logCreation()
+{
+    system("cd csv && touch account_info.csv");
+    ofstream accountLog;
+    accountLog.open("csv/account_info.csv");
+    
+    accountLog << "Account Holder" << ", "
+               << "Account Number" << ", "
+               << "Account Type" << ", "
+               << "Amount($)";
+    accountLog.close();
 }
