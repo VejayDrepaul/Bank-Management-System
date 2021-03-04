@@ -2,6 +2,8 @@
 #include <string>
 #include <fstream>
 #include <cstdlib>
+#include <cstring>
+#include <cstdio>
 
 using std::cout;
 using std::endl;
@@ -24,7 +26,7 @@ void new_account()
     int account_number, init_amount;
     account_number = numberCreation();
     string account_holder;
-    char account_type;
+    string account_type;
     cout << "\n";
 
     cout << "Enter the name of the account holder: ";
@@ -36,12 +38,19 @@ void new_account()
 
     cout << "What type of account do you want to open [(C)hecking/(S)avings]: ";
     cin >> account_type;
+    putchar(toupper(account_type));
     cout << "\n";
 
     cout << "Enter the amount you want to deposit right now: ";
     cin >> init_amount;
 
-    std::ofstream myFile;
+    if (account_type == "C") 
+        account_type = "Checking";
+
+    if (account_type == "S")
+        account_type = "Savings";
+    
+    ofstream myFile;
     myFile.open("csv/account_info.csv", ios::app);
     myFile << "\n"
            << account_holder << ", "
