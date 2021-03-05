@@ -47,15 +47,16 @@ void new_account()
     if (account_type == "S")
         account_type = "Savings";
     
-    /*    
-    accountLog.open("csv/account_info.csv", ios::app);
+    ofstream accountLog;  
+    accountLog.open("csv/account_info.csv", ios::ate);
     accountLog << "\n"
                << account_holder << ", "
                << account_number << ", "
                << account_type << ", $"
-               << init_amount;
+               << init_amount
+               << "\n";
     accountLog.close();
-    */
+    
 }
 
 int numberCreation()
@@ -81,3 +82,4 @@ void logCreation()
                << "Amount($)";
     accountLog.close();
 }
+
