@@ -2,8 +2,8 @@
 #include <iomanip>
 #include <string>   
 #include <fstream>
-#include "includes/newAccount.h"
-#include "includes/accountList.h"
+#include "includes/NewAccount.h"
+#include "includes/AccountList.h"
 
 using std::cout;
 using std::endl;
