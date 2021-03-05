@@ -47,17 +47,7 @@ void new_account()
     if (account_type == "S")
         account_type = "Savings";
     
-    ofstream accountLog;
-    accountLog.open("csv/account_info.csv");
-    accountLog.close();
-    
-    if (accountLog) {
-        cout << "exist";
-    }
-    else {
-        logCreation();
-    }
-    
+    /*    
     accountLog.open("csv/account_info.csv", ios::app);
     accountLog << "\n"
                << account_holder << ", "
@@ -65,6 +55,7 @@ void new_account()
                << account_type << ", $"
                << init_amount;
     accountLog.close();
+    */
 }
 
 int numberCreation()
