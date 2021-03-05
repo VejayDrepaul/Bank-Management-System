@@ -9,7 +9,6 @@ using std::endl;
 using std::cin;
 
 void welcomeScreen();
-void trycsv();
 
 int main() 
 {
@@ -34,6 +33,7 @@ int main()
     
     switch(options) {
         case 1:
+            logCreation();
             new_account();
     }
     
