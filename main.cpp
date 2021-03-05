@@ -3,6 +3,7 @@
 #include <string>   
 #include <fstream>
 #include "includes/newAccount.h"
+#include "includes/accountList.h"
 
 using std::cout;
 using std::endl;
@@ -35,6 +36,8 @@ int main()
         case 1:
             logCreation();
             new_account();
+        case 5:
+            accountList();
     }
     
     return 0;
