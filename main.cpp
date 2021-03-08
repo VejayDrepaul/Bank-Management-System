@@ -37,6 +37,8 @@ int main()
             new_account();
         case 5:
             accountList();
+        case 8:
+            exit(0);
     }
     
     return 0;
