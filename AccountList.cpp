@@ -17,7 +17,7 @@ public:
 */
 void accountList()
 {
-    system("cd csv && cat account_info.csv");
+    system("cd csv && cat AccountInfo.csv");
     /*
     ifstream accountHolders;
     accountHolders.open("csv/account_info.csv", ios::in);
