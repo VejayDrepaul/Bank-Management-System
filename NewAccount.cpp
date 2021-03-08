@@ -41,22 +41,21 @@ void new_account()
     cout << "Enter the amount you want to deposit right now: ";
     cin >> init_amount;
 
-    if (account_type == "C") 
+    if (account_type == "C"  || account_type == "c") 
         account_type = "Checking";
 
-    if (account_type == "S")
+    if (account_type == "S" || account_type == "s")
         account_type = "Savings";
     
-    ofstream accountLog;  
-    accountLog.open("csv/account_info.csv", ios::ate);
-    accountLog << "\n"
-               << account_holder << ", "
-               << account_number << ", "
-               << account_type << ", $"
-               << init_amount
-               << "\n";
-    accountLog.close();
-    
+    ofstream Log;  
+    Log.open("csv/AccountInfo.csv", ios::app);
+    Log << account_holder << ", "
+        << account_number << ", "
+        << account_type << ", $"
+        << init_amount
+        << "\n";
+   Log.close();
+   
 }
 
 int numberCreation()
@@ -69,17 +68,18 @@ int numberCreation()
     
     return random_number;
 }
-
+/*
 void logCreation()
 {
     system("cd csv && touch account_info.csv");
     ofstream accountLog;
     accountLog.open("csv/account_info.csv");
-    
-    accountLog << "Account Holder" << ", "
+    accountLog << "\n"
+               << "Account Holder" << ", "
                << "Account Number" << ", "
                << "Account Type" << ", "
-               << "Amount($)";
+               << "[$]Amount"
+               << "\n";
     accountLog.close();
 }
-
+*/
