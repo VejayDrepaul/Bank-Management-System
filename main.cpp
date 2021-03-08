@@ -34,7 +34,6 @@ int main()
     
     switch(options) {
         case 1:
-            logCreation();
             new_account();
         case 5:
             accountList();
