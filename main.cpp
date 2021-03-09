@@ -3,6 +3,7 @@
 #include <string>   
 #include <fstream>
 #include "includes/NewAccount.h"
+#include "includes/administrator.h"
 
 using std::cout;
 using std::endl;
@@ -35,6 +36,7 @@ int main()
         case 1:
             new_account();
         case 5:
+	    system("python3 depositor.py");
             system("cd csv && cat AccountInfo.csv");
         case 8:
             exit(0);
