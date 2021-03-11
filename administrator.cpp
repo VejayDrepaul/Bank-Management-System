@@ -1,12 +1,20 @@
 #include <iostream>
+#include <string>
 
 using std::cout;
 using std::endl;
 using std::cin;
+using std::string;
 
-void adminCreation()
+int main()
 {
-	string master_pass;
-	cout << "Enter a master password";
-	cin >> master_pass;
+	string password;
+	cout << "Enter a master password: ";
+	cin >> password;
+
+	for (int i = 0; i < password.length(); i++) {
+		cout << "*";
+	}
+
+	return 0;
 }
