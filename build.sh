@@ -1,2 +1,2 @@
-g++ -o banksys Main.cpp Administrator.cpp NewAccount.cpp
+g++ -o banksys main.cpp Administrator.cpp NewAccount.cpp
 ./banksys
