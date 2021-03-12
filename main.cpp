@@ -14,6 +14,17 @@ void option_menu();
 
 int main()
 {
+  char account_choice;
+  cout << "Do you want to login as an admin or customer[A/C]: ";
+  cin >> account_choice;
+
+  if (account_choice == "A" || account_choice == "a") {
+    admin_creation();
+  }
+  else {
+    cout << "Invalid Input!";
+  }
+
   welcomeScreen();
   option_menu();
   return 0;
@@ -35,9 +46,6 @@ void option_menu()
   cout<<"\n\n\t02. DEPOSIT AMOUNT";
   cout<<"\n\n\t03. WITHDRAW AMOUNT";
   cout<<"\n\n\t04. BALANCE ENQUIRY";
-  cout<<"\n\n\t05. ALL ACCOUNT HOLDER LIST";
-  cout<<"\n\n\t06. CLOSE AN ACCOUNT";
-  cout<<"\n\n\t07. MODIFY AN ACCOUNT";
   cout<<"\n\n\t08. EXIT";
   cout<<"\n\n\tSelect Your Option (1-8) ";
   cout << "\n\n";
